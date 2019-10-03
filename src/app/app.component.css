@@ -1,0 +1,83 @@
+#contenedorPrincipal{
+    -webkit-box-shadow: 29px 13px 61px -14px rgba(40,167,69,1);
+    -moz-box-shadow: 29px 13px 61px -14px rgba(40,167,69,1);
+    box-shadow: 29px 13px 61px -14px rgba(40,167,69,1);
+
+    background: rgba(217, 230, 230, 0.712);
+}
+
+/* #decisionPrincipal{
+ transition: all 1s;
+ color:black;
+ cursor:pointer;
+}
+
+#decisionPrincipal:hover{
+    font-size: 17px;
+    padding: 2px;
+    border-bottom: 1px solid black;
+} */
+
+#edit{
+    transition: all 1s;
+    font-size: 18px;
+}
+
+#edit:hover span{
+    color: white;
+}
+
+.navegacion a{
+    transition: all 0.5s;
+}
+
+.navegacion:hover a{
+    color: rgb(222, 238, 131);
+    font-size: 25px;
+}
+
+@media (max-width: 865px){
+    .logoAplicacion img{
+        width: 260px;
+    }
+}
+
+@media (max-width: 575px){
+
+    .contenedorDecisiones{
+        flex-direction: column;
+    }
+
+    .nombreDesicion{
+        width: 100%;
+        padding: 4px;
+    }
+    
+    .descripcionDesicion{
+        width: 100%;
+        margin-top: 5px;
+        padding: 4px;
+    }
+}
+
+@media (max-width: 400px){
+    .tituloDecision{
+        font-size: 21px;
+    }
+}
+
+@media (max-width: 315px){
+    .logoAplicacion img{
+        width: 230px;
+    }
+}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,15 @@
+#botones{
+    background: rgb(240, 147, 147); 
+    font-size: 18px; 
+    padding: 7px;
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+    transition: all 0.5s;
+}
+
+#botones:hover{
+    background: rgb(243, 99, 99); 
+    cursor:pointer;
+    padding: 7px;
+}

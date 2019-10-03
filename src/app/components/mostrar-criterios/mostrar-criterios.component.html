@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="row mt-2">
+      <div class="col-md-12">
+         <ul class="list-group mt-2">
+            <li *ngFor="let criter of arrayCriterios" class="list-group-item list-group-item-action">
+                <span style="color: red;">Criterio {{criter.id}}: </span>  
+                <span id="decisionPrincipal"> {{criter.nombreCriterio}} - {{criter.peso}}</span>
+                <span id="botones" class="float-right ml-3"> - </span> 
+                <span id="botones" class="float-right"> + </span>
+            </li>
+          </ul>
+      </div>
+    </div>
+  </div>

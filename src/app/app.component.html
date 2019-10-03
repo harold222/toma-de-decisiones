@@ -1,0 +1,76 @@
+<nav class="navbar navbar-dark bg-dark justify-content-center navegacion">
+  <a class="navbar-brand" href="/">Toma De Decisiónes</a>
+</nav>
+
+<div class="container">
+  <div class="row mt-4">
+    <div class="col-md-8">
+
+      <div class="card" id="contenedorPrincipal">
+        <div class="card-body">
+          <div class="card-title">
+            <h4 class="text-center font-weight-bold tituloDecision">Ingresa una nueva decisión</h4> 
+            <hr style="border: 1px solid #28a745">
+          </div>
+          <div class="form-group row contenedorDecisiones">
+
+              <div class="col">
+                <input type="text" [(ngModel)]="seleccionarDecision.name" class="form-control nombreDesicion" placeholder="Nombre de la decision">
+              </div>
+
+              <div class="col">
+                <input type="text" [(ngModel)]="seleccionarDecision.description" class="form-control descripcionDesicion" placeholder="Descripcion de la decision">
+              </div>
+
+            </div>
+          </div>
+
+          <button (click)="agregarEditar()" class="btn btn-success mx-4 mb-2">Agregar</button>
+          
+          <button *ngIf="seleccionarDecision.id !== 0" 
+                  [swal]="{ title: 'Esta seguro que desea eliminar esta decision?'}"
+                  (type)="question"
+                  (confirm)="delete()"
+                  (close)="onClose($event)"
+                  class="btn btn-warning mx-4 mb-2">
+            Borrar
+          </button>
+       
+        </div>
+
+      <ul class="list-group mt-4">
+
+          <li [class.active]="desicion == seleccionarDecision" *ngFor="let desicion of ArrayDeDecisiones" class="list-group-item list-group-item-action">
+              
+              <span class="badge badge-success">Decision {{desicion.id}}: </span>  
+
+              <!-- Si no existen criterios entonces me muestra un modal para agregar criterios-->
+              <span *ngIf="numeroCriterio === 0" data-toggle="modal" data-target="#llamarCriterio" id="decisionPrincipal"> {{desicion.name}} - {{desicion.description}}</span>
+              <!-- Si existen criterios al dar click, me mostrara los criterios ya guardados -->
+              <a (click)="editarDecision(desicion)" style="cursor:pointer;" id="edit">
+                  <span class="badge badge-warning float-right">Editar</span>
+                </a>
+                
+              <span (click)="mostrarCriterio()" *ngIf="numeroCriterio !== 0" id="decisionPrincipal">
+                 {{desicion.name}} - {{desicion.description}} <!--  && desicion.id ==  -->
+                 <app-mostrar-criterios *ngIf="mostrar"></app-mostrar-criterios>
+              </span>
+
+              
+          </li>
+
+        </ul>
+
+    </div>
+
+    <div class="col-md-4 mt-2 logoAplicacion">
+      <img width="300" alt="Angular Logo"
+        src="../assets/img/logo.png"/>
+    </div>
+    
+    <app-criterio></app-criterio> <!-- LLamo componente para agregar criterios -->
+    
+  </div>
+
+</div>
+

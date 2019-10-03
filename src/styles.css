@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Merriweather', serif;
+}
+
+body{
+    background: #2c3e50; 
+    background: -webkit-linear-gradient(to left, #3498db, #2c3e50);
+    background: linear-gradient(to left, #3498db, #2c3e50);
+    height: 100vh;
+}
+
+
+
