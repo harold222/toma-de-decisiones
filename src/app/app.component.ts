@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Decision } from './models/decision';
-import { MostrarCriteriosComponent } from './components/mostrar-criterios/mostrar-criterios.component';
 
 @Component({
   selector: 'app-root',
@@ -19,12 +18,10 @@ export class AppComponent {
   mostrar: boolean = false;/* Los criterios comenzaran en false para que no se muestren */
 
   agregarEditar(){//evento del boton
-
     if (this.seleccionarDecision.id === 0) {
       this.seleccionarDecision.id = this.ArrayDeDecisiones.length + 1;
       this.ArrayDeDecisiones.push(this.seleccionarDecision);
     }
-
     this.seleccionarDecision  = new Decision(); //agrego uno nuevo para limpiar el input
   }
 
@@ -34,31 +31,11 @@ export class AppComponent {
 
   delete() {
     this.ArrayDeDecisiones = this.ArrayDeDecisiones.filter(x => x !== this.seleccionarDecision);
-    this.seleccionarDecision = new Decision(); 
-
-    /* Swal.fire({
-      title: 'Are you sure?',
-      text: "You won't be able to revert this!",
-      type: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, delete it!'
-    }).then((result) => {
-      if (result.value) {
-        Swal.fire(
-          'Deleted!',
-          'Your file has been deleted.',
-          'success'
-        )
-      }
-    }) */
-
+    this.seleccionarDecision = new Decision();
   }
 
   mostrarCriterio() { /* Cada vez que se haga click cambiara el estado de true a false */
     this.mostrar = !this.mostrar;
-  } 
-
+  }
 }
 

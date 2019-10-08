@@ -8,19 +8,35 @@ import { Criterios } from '../../models/criterios';
 })
 export class MostrarCriteriosComponent implements OnInit {
 
-  // arrayCriterios: Criterios[] = [
-  //   {id: 1, nombreCriterio: "precio", peso: 40},
-  //   {id: 2, nombreCriterio: "marca", peso: 60}
-  // ];
-  
-  arrayCriterios: Criterios[];
+  mostrar2:boolean = false;
+  numeroCriterio:number = 0;
+
+  arrayCriterios: Criterios[] = [
+    {id: 1, nombreCriterio: "precio", peso: 40},
+    {id: 2, nombreCriterio: "marca", peso: 60}
+  ];
+
+  seleccionarCriterio: Criterios = new Criterios();
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  muestra(){
-    console.log("see");
+  mostrarCriterio() { /* Cada vez que se haga click cambiara el estado de true a false */
+    this.mostrar2 = !this.mostrar2;
+  }
+
+  agregarCriterio(){
+    if (this.seleccionarCriterio.id === 0) {
+      this.seleccionarCriterio.id = this.arrayCriterios.length + 1;
+      this.arrayCriterios.push(this.seleccionarCriterio);
+    }
+    this.seleccionarCriterio  = new Criterios();
+  }
+
+  eliminarCriterio(){
+    this.arrayCriterios = this.arrayCriterios.filter(x => x !== this.seleccionarCriterio);
+    this.seleccionarCriterio = new Criterios();
   }
 }

@@ -7,12 +7,14 @@ import { SweetAlert2Module, SwalComponent } from '@sweetalert2/ngx-sweetalert2';
 import { AppComponent } from './app.component';
 import { CriterioComponent } from './components/criterio/criterio.component';
 import { MostrarCriteriosComponent } from './components/mostrar-criterios/mostrar-criterios.component';
+import { CriterioDosComponent } from './components/criterio-dos/criterio-dos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CriterioComponent,
-    MostrarCriteriosComponent
+    MostrarCriteriosComponent,
+    CriterioDosComponent,
   ],
   imports: [
     BrowserModule,

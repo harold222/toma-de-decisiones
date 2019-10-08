@@ -2,7 +2,7 @@
   <a class="navbar-brand" href="/">Toma De Decisiónes</a>
 </nav>
 
-<div class="container">
+<div class="container-fluid">
   <div class="row mt-4">
     <div class="col-md-8">
 
@@ -28,11 +28,9 @@
           <button (click)="agregarEditar()" class="btn btn-success mx-4 mb-2">Agregar</button>
           
           <button *ngIf="seleccionarDecision.id !== 0" 
-                  [swal]="{ title: 'Esta seguro que desea eliminar esta decision?'}"
-                  (type)="question"
-                  (confirm)="delete()"
-                  (close)="onClose($event)"
-                  class="btn btn-warning mx-4 mb-2">
+          [swal]="{ title: 'Esta seguro que desea eliminar esta decision?'}"
+          (confirm)="delete()"
+          class="btn btn-warning mx-4 mb-2">
             Borrar
           </button>
        
@@ -45,15 +43,15 @@
               <span class="badge badge-success">Decision {{desicion.id}}: </span>  
 
               <!-- Si no existen criterios entonces me muestra un modal para agregar criterios-->
-              <span *ngIf="numeroCriterio === 0" data-toggle="modal" data-target="#llamarCriterio" id="decisionPrincipal"> {{desicion.name}} - {{desicion.description}}</span>
+              <span *ngIf="numeroCriterio !== 0" data-toggle="modal" data-target="#llamarCriterio" id="decisionPrincipal"> {{desicion.name}} - {{desicion.description}}</span>
               <!-- Si existen criterios al dar click, me mostrara los criterios ya guardados -->
               <a (click)="editarDecision(desicion)" style="cursor:pointer;" id="edit">
                   <span class="badge badge-warning float-right">Editar</span>
                 </a>
                 
-              <span (click)="mostrarCriterio()" *ngIf="numeroCriterio !== 0" id="decisionPrincipal">
+              <span (click)="mostrarCriterio()" *ngIf="numeroCriterio === 0" id="decisionPrincipal" >
                  {{desicion.name}} - {{desicion.description}} <!--  && desicion.id ==  -->
-                 <app-mostrar-criterios *ngIf="mostrar"></app-mostrar-criterios>
+                 <app-mostrar-criterios></app-mostrar-criterios>
               </span>
 
               

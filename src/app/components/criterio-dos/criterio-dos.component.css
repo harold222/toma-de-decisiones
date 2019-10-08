@@ -1,5 +1,5 @@
 #botones{
-    background: rgb(240, 147, 147); 
+    background: rgb(104, 205, 245); 
     font-size: 16px; 
     padding: 7px;
     border-radius: 20px;
@@ -9,7 +9,7 @@
 }
 
 #botones:hover{
-    background: rgb(243, 99, 99); 
+    background: rgb(25, 148, 248); 
     cursor:pointer;
     padding: 7px;
 }

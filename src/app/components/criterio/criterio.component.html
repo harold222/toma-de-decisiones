@@ -12,11 +12,11 @@
           <form>
             <div class="form-group">
               <label for="recipient-name" class="col-form-label">Nombre del criterio</label>
-              <input type="text" class="form-control" id="recipient-name" [(ngModel)]="seleccionarCriterio.nombreCriterio">
+              <input type="text" class="form-control" id="recipient-name" >
             </div>
             <div class="form-group">
               <label for="message-text" class="col-form-label">Peso del criterio:</label>
-              <select name="peso" id="peso" class="form-control" [(ngModel)]="seleccionarCriterio.peso">
+              <select name="peso" id="peso" class="form-control">
                   <option value="10">0.1</option>
                   <option value="20">0.2</option>
                   <option value="30">0.3</option>
@@ -33,7 +33,7 @@
         </div>
         <div class="modal-footer bg-dark">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-          <button type="button" (click)="agregarCriterio()" data-dismiss="modal" class="btn btn-primary">Agregar Criterio</button>
+          <button type="button" data-dismiss="modal" class="btn btn-primary">Agregar Criterio</button>
         </div>
       </div>
     </div>

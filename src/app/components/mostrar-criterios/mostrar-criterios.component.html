@@ -1,12 +1,17 @@
-<div class="container">
+<div class="container-fluid">
     <div class="row mt-2">
       <div class="col-md-12">
          <ul class="list-group mt-2">
             <li *ngFor="let criter of arrayCriterios" class="list-group-item list-group-item-action">
                 <span style="color: red;">Criterio {{criter.id}}: </span>  
-                <span id="decisionPrincipal"> {{criter.nombreCriterio}} - {{criter.peso}}</span>
-                <span id="botones" class="float-right ml-3"> - </span> 
-                <span id="botones" class="float-right"> + </span>
+
+                <span (click)="eliminarCriterio()" *ngIf="criter.id == 2"  id="botones" class="float-right ml-3"> - </span>
+                <span (click)="agregarCriterio()" *ngIf="criter.id == 2" id="botones" class="float-right"> + </span>
+
+                <span (click)="mostrarCriterio()" *ngIf="numeroCriterio === 0" id="decisionPrincipal" > 
+                  {{criter.nombreCriterio}} - {{criter.peso}}
+                  <app-criterio-dos *ngIf="mostrar2"></app-criterio-dos>
+                </span>
             </li>
           </ul>
       </div>
