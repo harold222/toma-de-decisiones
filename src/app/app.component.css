@@ -2,21 +2,8 @@
     -webkit-box-shadow: 29px 13px 61px -14px rgba(40,167,69,1);
     -moz-box-shadow: 29px 13px 61px -14px rgba(40,167,69,1);
     box-shadow: 29px 13px 61px -14px rgba(40,167,69,1);
-
     background: rgba(217, 230, 230, 0.712);
 }
-
-/* #decisionPrincipal{
- transition: all 1s;
- color:black;
- cursor:pointer;
-}
-
-#decisionPrincipal:hover{
-    font-size: 17px;
-    padding: 2px;
-    border-bottom: 1px solid black;
-} */
 
 #edit{
     transition: all 1s;
@@ -34,6 +21,12 @@
 .navegacion:hover a{
     color: rgb(222, 238, 131);
     font-size: 25px;
+}
+
+@media (min-width: 1300px){
+    .contenedor1{
+        width: 70%;
+    }
 }
 
 @media (max-width: 865px){

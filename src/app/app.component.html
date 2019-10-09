@@ -2,9 +2,9 @@
   <a class="navbar-brand" href="/">Toma De Decisiónes</a>
 </nav>
 
-<div class="container">
+<div class="container-fluid m-auto contenedor1">
   <div class="row mt-4">
-    <div class="col-12">
+    <div class="col">
 
       <div class="card" id="contenedorPrincipal">
         <div class="card-body">
@@ -40,7 +40,7 @@
 
           <li [class.active]="desicion == seleccionarDecision" *ngFor="let desicion of ArrayDeDecisiones" class="list-group-item list-group-item-action">
               
-              <span class="badge badge-success">Decision {{desicion.id}}: </span>  
+              <span (click)="mostrarCriterio(desicion)" *ngIf="ArrayDeDecisiones.length !== 0" class="badge badge-success">Decision {{desicion.id}}: </span>  
 
               <!-- Si no existen criterios entonces me muestra un modal para agregar criterios-->
               <span *ngIf="ArrayDeDecisiones.length === 0" data-toggle="modal" data-target="#llamarCriterio" id="decisionPrincipal"> {{desicion.name}} - {{desicion.description}}</span>
@@ -59,7 +59,6 @@
 
     </div>
 
-    
     <app-criterio></app-criterio> <!-- LLamo componente para agregar criterios -->
     
   </div>

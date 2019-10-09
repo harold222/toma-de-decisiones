@@ -24,7 +24,7 @@ export class MostrarCriteriosComponent implements OnInit {
   }
 
   mostrarCriterio(criter) { /* Cada vez que se haga click cambiara el estado de true a false */
-    this.numeroCriterio = criter;       
+    this.numeroCriterio = criter;
     this.mostrar2 = !this.mostrar2;
   }
 

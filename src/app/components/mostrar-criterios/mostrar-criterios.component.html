@@ -1,16 +1,20 @@
 <div class="container-fluid">
     <div class="row mt-2">
-      <div class="col-md-12">
+      <div class="col">
          <ul class="list-group mt-2">
             <li *ngFor="let criter of arrayCriterios" class="list-group-item list-group-item-action">
-                <span style="color: red;">Nivel 1 - criterio {{criter.id}}: </span>  
+                <span class="float-left" (click)="mostrarCriterio(criter)" *ngIf="arrayCriterios.length !== 0" style="color: red;">
+                  Nivel 1 - criterio {{criter.id}}: 
+                </span>  
 
-                <span *ngIf="arrayCriterios.length === 0" data-toggle="modal" data-target="#llamarCriterio" id="decisionPrincipal">
+                <span class="float-left" *ngIf="arrayCriterios.length === 0" data-toggle="modal" data-target="#llamarCriterio" id="decisionPrincipal">
                   {{criter.nombreCriterio}} - {{criter.peso}}
                 </span>
                 
-                <span (click)="eliminarCriterio()" *ngIf="criter.id == arrayCriterios.length"  id="botones" class="float-right ml-3"> - </span>
-                <span (click)="agregarCriterio()" *ngIf="criter.id == arrayCriterios.length" id="botones" class="float-right"> + </span>
+                <div class="tamanoBotones">
+                  <span (click)="eliminarCriterio()" *ngIf="criter.id == arrayCriterios.length"  id="botones" class="float-right ml-3"> - </span>
+                  <span (click)="agregarCriterio()" *ngIf="criter.id == arrayCriterios.length" id="botones" class="float-right"> + </span>
+                </div>
                 
                 <span (click)="mostrarCriterio(criter)" *ngIf="arrayCriterios.length !== 0" id="decisionPrincipal" > 
                   {{criter.nombreCriterio}} - {{criter.peso}}

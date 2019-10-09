@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { CriterioComponent } from './components/criterio/criterio.component';
 import { MostrarCriteriosComponent } from './components/mostrar-criterios/mostrar-criterios.component';
 import { CriterioDosComponent } from './components/criterio-dos/criterio-dos.component';
+import { CriterioTresComponent } from './components/criterio-tres/criterio-tres.component';
+import { CriterioCuatroComponent } from './components/criterio-cuatro/criterio-cuatro.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,8 @@ import { CriterioDosComponent } from './components/criterio-dos/criterio-dos.com
     CriterioComponent,
     MostrarCriteriosComponent,
     CriterioDosComponent,
+    CriterioTresComponent,
+    CriterioCuatroComponent,
   ],
   imports: [
     BrowserModule,

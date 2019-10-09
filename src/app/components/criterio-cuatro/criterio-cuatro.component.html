@@ -3,7 +3,7 @@
       <div class="col-md-12">
          <ul class="list-group mt-2">
             <li *ngFor="let criter of arrayCriterios" class="list-group-item list-group-item-action">
-                <span (click)="mostrarCriterio(criter)" *ngIf="arrayCriterios.length !== 0" style="color: blue;">Nivel 2 - subcriterio {{criter.id}}: </span>  
+                <span (click)="mostrarCriterio(criter)" *ngIf="arrayCriterios.length !== 0" style="color: rgb(240, 206, 94);">Nivel 4 - subcriterio {{criter.id}}: </span>  
 
                 <span *ngIf="arrayCriterios.length === 0" data-toggle="modal" data-target="#llamarCriterio" id="decisionPrincipal">
                   {{criter.nombreCriterio}} - {{criter.peso}}
@@ -16,7 +16,6 @@
                   {{criter.nombreCriterio}} - {{criter.peso}}
                 </span>
 
-                <app-criterio-tres *ngIf="criter == numeroCriterio && mostrar2 == true"></app-criterio-tres>
 
             </li>
           </ul>

@@ -2,18 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { Criterios } from '../../models/criterios';
 
 @Component({
-  selector: 'app-criterio-dos',
-  templateUrl: './criterio-dos.component.html',
-  styleUrls: ['./criterio-dos.component.css']
+  selector: 'app-criterio-cuatro',
+  templateUrl: './criterio-cuatro.component.html',
+  styleUrls: ['./criterio-cuatro.component.css']
 })
-export class CriterioDosComponent implements OnInit {
+export class CriterioCuatroComponent implements OnInit {
 
   mostrar2:boolean = false;
   numeroCriterio: Criterios = new Criterios();
-
+  
   arrayCriterios: Criterios[] = [
-    {id: 1, nombreCriterio: "moneda", peso: 40},
-    {id:2, nombreCriterio: "valor", peso: 60}
+    {id: 1, nombreCriterio: "otro", peso: 100}
   ];
 
   seleccionarCriterio: Criterios = new Criterios();
