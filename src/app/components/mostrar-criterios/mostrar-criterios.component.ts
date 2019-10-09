@@ -9,7 +9,7 @@ import { Criterios } from '../../models/criterios';
 export class MostrarCriteriosComponent implements OnInit {
 
   mostrar2:boolean = false;
-  numeroCriterio:number = 0;
+  numeroCriterio: Criterios = new Criterios();
 
   arrayCriterios: Criterios[] = [
     {id: 1, nombreCriterio: "precio", peso: 40},
@@ -23,7 +23,8 @@ export class MostrarCriteriosComponent implements OnInit {
   ngOnInit() {
   }
 
-  mostrarCriterio() { /* Cada vez que se haga click cambiara el estado de true a false */
+  mostrarCriterio(criter) { /* Cada vez que se haga click cambiara el estado de true a false */
+    this.numeroCriterio = criter;       
     this.mostrar2 = !this.mostrar2;
   }
 

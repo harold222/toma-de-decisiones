@@ -3,10 +3,10 @@
       <div class="col-md-12">
          <ul class="list-group mt-2">
             <li *ngFor="let criter of arrayCriterios" class="list-group-item list-group-item-action">
-                <span style="color: blue;">Nivel 2 criterio {{criter.id}}: </span>  
+                <span style="color: blue;">Nivel 2 - subcriterio {{criter.id}}: </span>  
 
-                <a href="#"><span *ngIf="criter.id == 2" id="botones" class="float-right ml-3"> - </span></a> 
-                <a href="#"><span *ngIf="criter.id == 2" id="botones" class="float-right"> + </span></a>
+                <span (click)="eliminarCriterio()" *ngIf="criter.id == arrayCriterios.length" id="botones" class="float-right ml-3"> - </span>
+                <span (click)="agregarCriterio()" *ngIf="criter.id == arrayCriterios.length" id="botones" class="float-right"> + </span>
 
                 <span id="decisionPrincipal">
                   {{criter.nombreCriterio}} - {{criter.peso}}

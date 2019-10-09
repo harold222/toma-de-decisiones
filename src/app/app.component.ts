@@ -14,7 +14,7 @@ export class AppComponent {
   ];
 
   seleccionarDecision: Decision = new Decision();
-  numeroCriterio: number = 0;
+  numeroCriterio: Decision = new Decision();
   mostrar: boolean = false;/* Los criterios comenzaran en false para que no se muestren */
 
   agregarEditar(){//evento del boton
@@ -34,8 +34,10 @@ export class AppComponent {
     this.seleccionarDecision = new Decision();
   }
 
-  mostrarCriterio() { /* Cada vez que se haga click cambiara el estado de true a false */
+  mostrarCriterio(decisione) { /* Cada vez que se haga click cambiara el estado de true a false */
+    this.numeroCriterio = decisione;
     this.mostrar = !this.mostrar;
   }
+
 }
 

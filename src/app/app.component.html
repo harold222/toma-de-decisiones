@@ -2,9 +2,9 @@
   <a class="navbar-brand" href="/">Toma De Decisiónes</a>
 </nav>
 
-<div class="container-fluid">
+<div class="container">
   <div class="row mt-4">
-    <div class="col-md-8">
+    <div class="col-12">
 
       <div class="card" id="contenedorPrincipal">
         <div class="card-body">
@@ -43,28 +43,22 @@
               <span class="badge badge-success">Decision {{desicion.id}}: </span>  
 
               <!-- Si no existen criterios entonces me muestra un modal para agregar criterios-->
-              <span *ngIf="numeroCriterio !== 0" data-toggle="modal" data-target="#llamarCriterio" id="decisionPrincipal"> {{desicion.name}} - {{desicion.description}}</span>
+              <span *ngIf="ArrayDeDecisiones.length === 0" data-toggle="modal" data-target="#llamarCriterio" id="decisionPrincipal"> {{desicion.name}} - {{desicion.description}}</span>
               <!-- Si existen criterios al dar click, me mostrara los criterios ya guardados -->
               <a (click)="editarDecision(desicion)" style="cursor:pointer;" id="edit">
-                  <span class="badge badge-warning float-right">Editar</span>
-                </a>
+                <span class="badge badge-warning float-right">Editar</span>
+              </a>
                 
-              <span (click)="mostrarCriterio()" *ngIf="numeroCriterio === 0" id="decisionPrincipal" >
-                 {{desicion.name}} - {{desicion.description}} <!--  && desicion.id ==  -->
-                 <app-mostrar-criterios></app-mostrar-criterios>
+              <span (click)="mostrarCriterio(desicion)" *ngIf="ArrayDeDecisiones.length !== 0" id="decisionPrincipal" >
+                 {{desicion.name}} - {{desicion.description}}
               </span>
-
               
+              <app-mostrar-criterios class="ocultar" *ngIf="desicion == numeroCriterio && mostrar == true"></app-mostrar-criterios>
           </li>
-
         </ul>
 
     </div>
 
-    <div class="col-md-4 mt-2 logoAplicacion">
-      <img width="300" alt="Angular Logo"
-        src="../assets/img/logo.png"/>
-    </div>
     
     <app-criterio></app-criterio> <!-- LLamo componente para agregar criterios -->
     
