@@ -1,6 +1,5 @@
 <div class="mt-3">
-    <div class="row mt-2">
-      <div class="col-md-12">
+    <div class="mt-2">
          <ul class="list-group mt-2">
             <li *ngFor="let criter of arrayCriterios" class="list-group-item list-group-item-action">
                 <div class="row">
@@ -22,7 +21,7 @@
                   </span>
                 </div>
 
-                <div class="float-left mostrarCriterioTres">
+                <div class="mostrarCriterioTres">
                   <app-criterio-tres *ngIf="criter == numeroCriterio && mostrar2 == true"></app-criterio-tres>
                 </div>
                 
@@ -35,6 +34,5 @@
 
             </li>
           </ul>
-      </div>
     </div>
   </div>

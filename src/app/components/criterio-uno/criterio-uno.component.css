@@ -14,9 +14,42 @@
     padding: 7px;
 }
 
+@media (max-width: 700px){
+    .mostrarCriterioDos{
+        width: 90vw;
+    }
+}
 
-/* @media (max-width: 700px){
+@media (max-width: 575px){
+    .mostrarCriterioDos{
+        width: 88vw;
+    }
+}
 
-    
+@media (max-width: 450px){
+    .mostrarCriterioDos{
+        width: 87vw;
+    }
+}
 
-} */
+@media (max-width: 400px){
+    .mostrarCriterioDos{
+        width: 85vw;
+    }
+}
+
+@media (max-width: 350px){
+    .mostrarCriterioDos{
+        width: 83vw;
+    }
+}
+
+@media (max-width: 315px){
+    .mostrarCriterioDos{
+        width: 81vw;
+    }
+}
+
+
+
+

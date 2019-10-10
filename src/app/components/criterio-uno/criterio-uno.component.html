@@ -1,6 +1,6 @@
-<div class="container-fluid">
-    <div class="row mt-2">
-      <div class="col">
+<div class="">
+    <div class=" mt-2">
+      <div class="">
          <ul class="list-group mt-2">
             <li *ngFor="let criter of arrayCriterios" class="list-group-item list-group-item-action">
               <div class="row">
@@ -23,7 +23,9 @@
                 </span>
               </div>
               
-              <app-criterio-dos *ngIf="criter == numeroCriterio && mostrar2 == true"></app-criterio-dos>
+              <div class="mostrarCriterioDos">
+                <app-criterio-dos *ngIf="criter == numeroCriterio && mostrar2 == true"></app-criterio-dos>
+              </div>
 
               <div class="row">
                 <div class="mt-4 mb-2 col-12">

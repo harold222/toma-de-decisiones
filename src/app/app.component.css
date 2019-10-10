@@ -36,13 +36,20 @@
 }
 
 @media (max-width: 700px){
-    /* .mostrarCriterioUno{
-        width: 105%;
-    } */
+    .mostrarCriterioUno{
+        width: 94vw;
+    }
+    
+    .contenedor1{
+        width: 98vw;
+    }
 }
 
 @media (max-width: 575px){
-
+    .mostrarCriterioUno{
+        width: 93vw;
+    }
+    
     .contenedorDecisiones{
         flex-direction: column;
     }
@@ -59,13 +66,33 @@
     }
 }
 
+@media (max-width: 450px){
+    .mostrarCriterioUno{
+        width: 92vw;
+    }
+}
+
 @media (max-width: 400px){
     .tituloDecision{
         font-size: 21px;
     }
+
+    .mostrarCriterioUno{
+        width: 91vw;
+    }
+}
+
+@media (max-width: 350px){
+    .mostrarCriterioUno{
+        width: 90vw;
+    }
 }
 
 @media (max-width: 315px){
+    .mostrarCriterioUno{
+        width: 89vw;
+    }
+
     .logoAplicacion img{
         width: 230px;
     }

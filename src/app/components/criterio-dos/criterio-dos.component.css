@@ -14,7 +14,38 @@
     padding: 7px;
 }
 
-.mostrarCriterioTres{
-    width: 110%;
-    margin-left: auto;
+@media (max-width: 700px){
+    .mostrarCriterioTres{
+        width: 86vw;
+    }
+}
+
+@media (max-width: 575px){
+    .mostrarCriterioTres{
+        width: 83vw;
+    }
+}
+
+@media (max-width: 450px){
+    .mostrarCriterioTres{
+        width: 81vw;
+    }
+}
+
+@media (max-width: 400px){
+    .mostrarCriterioTres{
+        width: 79vw;
+    }
+}
+
+@media (max-width: 350px){
+    .mostrarCriterioTres{
+        width: 76vw;
+    }
+}
+
+@media (max-width: 315px){
+    .mostrarCriterioTres{
+        width: 74vw;
+    }
 }
