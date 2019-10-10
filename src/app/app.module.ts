@@ -10,6 +10,7 @@ import { CriterioUnoComponent } from './components/criterio-uno/criterio-uno.com
 import { CriterioDosComponent } from './components/criterio-dos/criterio-dos.component';
 import { CriterioTresComponent } from './components/criterio-tres/criterio-tres.component';
 import { CriterioCuatroComponent } from './components/criterio-cuatro/criterio-cuatro.component';
+import { TablaResultadosComponent } from './components/tabla-resultados/tabla-resultados.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { CriterioCuatroComponent } from './components/criterio-cuatro/criterio-c
     CriterioDosComponent,
     CriterioTresComponent,
     CriterioCuatroComponent,
+    TablaResultadosComponent,
   ],
   imports: [
     BrowserModule,

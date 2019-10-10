@@ -1,38 +1,40 @@
 <div class="mt-3">
-    <div class="mt-2">
-         <ul class="list-group mt-2">
-            <li *ngFor="let criter of arrayCriterios" class="list-group-item list-group-item-action">
-                <div class="row">
+  <div class="mt-2">
+    <ul class="list-group mt-2">
+      <li *ngFor="let criter of arrayCriterios" class="list-group-item list-group-item-action">
+        <div class="row">
 
-                  <div class="col-sm-12 col-md-6 col-12">
-                    <span (click)="mostrarCriterio(criter)" *ngIf="arrayCriterios.length !== 0" style="color: blue;">
-                      Nivel 2 - subcriterio {{criter.id}}: 
-                    </span>  
-                  </div>
+          <div class="col-sm-12 col-md-6 col-12"> 
+            <span (click)="mostrarCriterio(criter)" *ngIf="arrayCriterios.length !== 0" style="color: blue;">
+              Nivel 2 - subcriterio {{criter.id}}: 
+            </span>  
 
-                  <div>
-                    <span *ngIf="arrayCriterios.length === 0" data-toggle="modal" data-target="#llamarCriterio" id="decisionPrincipal">
-                      {{criter.nombreCriterio}} - {{criter.peso}}
-                    </span>
-                  </div>
-                  
-                  <span  class="col-sm-12 col-md-6 col-12 " (click)="mostrarCriterio(criter)" *ngIf="arrayCriterios.length !== 0" id="decisionPrincipal" > 
-                    {{criter.nombreCriterio}} - {{criter.peso}}
-                  </span>
-                </div>
+            <span *ngIf="arrayCriterios.length === 0" data-toggle="modal" data-target="#llamarCriterio" id="decisionPrincipal" style="color: red;">
+                Nivel 1 - criterio {{criter.id}}: 
+            </span>
+          </div>
 
-                <div class="mostrarCriterioTres">
-                  <app-criterio-tres *ngIf="criter == numeroCriterio && mostrar2 == true"></app-criterio-tres>
-                </div>
-                
-                <div class="row">
-                  <div class="mt-4 mb-2 col-12">
-                    <span (click)="eliminarCriterio()" *ngIf="criter.id == arrayCriterios.length" id="botones" class="float-right"> - </span>
-                    <span (click)="agregarCriterio()" *ngIf="criter.id == arrayCriterios.length" id="botones" class="float-right mr-3"> + </span>
-                  </div>
-                </div>
+          <span *ngIf="arrayCriterios.length === 0" data-toggle="modal" data-target="#llamarCriterio" id="decisionPrincipal">
+            {{criter.nombreCriterio}} - {{criter.peso}}
+          </span>
+          
+          <span  class="col-sm-12 col-md-6 col-12 " (click)="mostrarCriterio(criter)" *ngIf="arrayCriterios.length !== 0" id="decisionPrincipal" > 
+            {{criter.nombreCriterio}} - {{criter.peso}}
+          </span>
+        </div>
 
-            </li>
-          </ul>
-    </div>
+        <div class="mostrarCriterioTres">
+          <app-criterio-tres *ngIf="criter == numeroCriterio && mostrar2 == true"></app-criterio-tres>
+        </div>
+        
+        <div class="row">
+          <div class="mt-4 mb-2 col-12">
+            <span (click)="eliminarCriterio()" *ngIf="criter.id == arrayCriterios.length" id="botones" class="float-right"> - </span>
+            <span (click)="agregarCriterio()" *ngIf="criter.id == arrayCriterios.length" id="botones" class="float-right mr-3"> + </span>
+          </div>
+        </div>
+
+      </li>
+    </ul>
   </div>
+</div>

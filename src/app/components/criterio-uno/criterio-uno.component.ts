@@ -37,7 +37,6 @@ export class CriterioUnoComponent implements OnInit {
   }
 
   eliminarCriterio(){
-    this.arrayCriterios = this.arrayCriterios.filter(x => x !== this.seleccionarCriterio);
-    this.seleccionarCriterio = new Criterios();
+
   }
 }

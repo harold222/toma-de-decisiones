@@ -1,41 +1,47 @@
-<div class="">
-    <div class=" mt-2">
-      <div class="">
-         <ul class="list-group mt-2">
-            <li *ngFor="let criter of arrayCriterios" class="list-group-item list-group-item-action">
-              <div class="row">
+<div class=" mt-2">
+  <ul class="list-group mt-2"><!-- Recorro los criterios exitentes en este nivel -->
+    <li *ngFor="let criter of arrayCriterios" class="list-group-item list-group-item-action">
+      <div class="row">
+        <!-- En esta seccion cree dos etiquetas span que me diga si no existen criterios en esa decision
+              me llame una ventana modal para agregar un criterio, y si existe simplemente que los despiegue
+              y asi con cada sub criterio
+        -->
+        <div class="col-sm-12 col-md-6 col-12">
+          <span (click)="mostrarCriterio(criter)" *ngIf="arrayCriterios.length !== 0" style="color: red;">
+            Nivel 1 - criterio {{criter.id}}: 
+          </span>
+          
+          <span *ngIf="arrayCriterios.length === 0" data-toggle="modal" data-target="#llamarCriterio" id="decisionPrincipal" style="color: red;">
+              Nivel 1 - criterio {{criter.id}}: 
+          </span>
+          <!-- Fin de esta seccion -->
+        </div>
 
-                <div class="col-sm-12 col-md-6 col-12">
-                  <span (click)="mostrarCriterio(criter)" *ngIf="arrayCriterios.length !== 0" style="color: red;">
-                    Nivel 1 - criterio {{criter.id}}: 
-                  </span>  
-                </div>
-
-                <div> <!-- Si no existen criterios -->
-                  <span *ngIf="arrayCriterios.length === 0" data-toggle="modal" data-target="#llamarCriterio" id="decisionPrincipal">
-                    {{criter.nombreCriterio}} - {{criter.peso}}
-                  </span>
-                </div>
-
-                
-                <span class="col-sm-12 col-md-6 col-12 " (click)="mostrarCriterio(criter)" *ngIf="arrayCriterios.length !== 0" id="decisionPrincipal" > 
-                  {{criter.nombreCriterio}} - {{criter.peso}}
-                </span>
-              </div>
-              
-              <div class="mostrarCriterioDos">
-                <app-criterio-dos *ngIf="criter == numeroCriterio && mostrar2 == true"></app-criterio-dos>
-              </div>
-
-              <div class="row">
-                <div class="mt-4 mb-2 col-12">
-                  <span (click)="eliminarCriterio()" *ngIf="criter.id == arrayCriterios.length"  id="botones" class="float-right"> - </span>
-                  <span (click)="agregarCriterio()" *ngIf="criter.id == arrayCriterios.length" id="botones" class="float-right mr-3"> + </span>
-                </div>
-              </div>
-
-            </li>
-          </ul>
+        <!-- Realize los mismo aca, el usuario podra dar click en la descripcion y en el numero de la desicion
+              para ver o agregar subcriterios
+        -->
+        <span *ngIf="arrayCriterios.length === 0" data-toggle="modal" data-target="#llamarCriterio" id="decisionPrincipal">
+          {{criter.nombreCriterio}} - {{criter.peso}}
+        </span>
+        <span class="col-sm-12 col-md-6 col-12 " (click)="mostrarCriterio(criter)" *ngIf="arrayCriterios.length !== 0" id="decisionPrincipal" > 
+          {{criter.nombreCriterio}} - {{criter.peso}}
+        </span>
+        <!-- Fin de esta seccion -->
       </div>
-    </div>
-  </div>
+
+      <!-- Llamo al criterio del siguiente nivel con la condicion que me muestre solo el criterio
+            del cual estoy haceindo click -->
+      <div class="mostrarCriterioDos"> 
+        <app-criterio-dos *ngIf="criter == numeroCriterio && mostrar2 == true"></app-criterio-dos>
+      </div>
+
+      <div class="row"><!-- Botenes de agregar o eliminar criterios, me validara que se pueda agregar al ultimo criterio colcoado -->
+        <div class="mt-4 mb-2 col-12">
+          <span (click)="eliminarCriterio()" *ngIf="criter.id == arrayCriterios.length"  id="botones" class="float-right"> - </span>
+          <span (click)="agregarCriterio()" *ngIf="criter.id == arrayCriterios.length" id="botones" class="float-right mr-3"> + </span>
+        </div>
+      </div>
+
+    </li>
+  </ul>
+</div>
