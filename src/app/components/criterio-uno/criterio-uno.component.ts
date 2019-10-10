@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Criterios } from '../../models/criterios';
 
 @Component({
-  selector: 'app-mostrar-criterios',
-  templateUrl: './mostrar-criterios.component.html',
-  styleUrls: ['./mostrar-criterios.component.css']
+  selector: 'app-criterio-uno',
+  templateUrl: './criterio-uno.component.html',
+  styleUrls: ['./criterio-uno.component.css']
 })
-export class MostrarCriteriosComponent implements OnInit {
+export class CriterioUnoComponent implements OnInit {
 
   mostrar2:boolean = false;
   numeroCriterio: Criterios = new Criterios();

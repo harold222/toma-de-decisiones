@@ -2,9 +2,8 @@
   <a class="navbar-brand" href="/">Toma De Decisiónes</a>
 </nav>
 
-<div class="container-fluid m-auto contenedor1">
-  <div class="row mt-4">
-    <div class="col">
+<div class="m-auto contenedor1">
+  <div class="mt-4">
 
       <div class="card" id="contenedorPrincipal">
         <div class="card-body">
@@ -53,11 +52,12 @@
                  {{desicion.name}} - {{desicion.description}}
               </span>
               
-              <app-mostrar-criterios class="ocultar" *ngIf="desicion == numeroCriterio && mostrar == true"></app-mostrar-criterios>
-          </li>
-        </ul>
+              <div class="mostrarCriterioUno">
+                <app-criterio-uno *ngIf="desicion == numeroCriterio && mostrar == true"></app-criterio-uno>
+              </div>
 
-    </div>
+            </li>
+        </ul>
 
     <app-criterio></app-criterio> <!-- LLamo componente para agregar criterios -->
     

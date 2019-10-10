@@ -6,7 +6,7 @@ import { SweetAlert2Module, SwalComponent } from '@sweetalert2/ngx-sweetalert2';
 
 import { AppComponent } from './app.component';
 import { CriterioComponent } from './components/criterio/criterio.component';
-import { MostrarCriteriosComponent } from './components/mostrar-criterios/mostrar-criterios.component';
+import { CriterioUnoComponent } from './components/criterio-uno/criterio-uno.component';
 import { CriterioDosComponent } from './components/criterio-dos/criterio-dos.component';
 import { CriterioTresComponent } from './components/criterio-tres/criterio-tres.component';
 import { CriterioCuatroComponent } from './components/criterio-cuatro/criterio-cuatro.component';
@@ -15,7 +15,7 @@ import { CriterioCuatroComponent } from './components/criterio-cuatro/criterio-c
   declarations: [
     AppComponent,
     CriterioComponent,
-    MostrarCriteriosComponent,
+    CriterioUnoComponent,
     CriterioDosComponent,
     CriterioTresComponent,
     CriterioCuatroComponent,

@@ -3,22 +3,35 @@
       <div class="col-md-12">
          <ul class="list-group mt-2">
             <li *ngFor="let criter of arrayCriterios" class="list-group-item list-group-item-action">
-                <span (click)="mostrarCriterio(criter)" *ngIf="arrayCriterios.length !== 0" style="color: blue;">
-                  Nivel 2 - subcriterio {{criter.id}}: 
-                </span>  
+                <div class="row">
 
-                <span *ngIf="arrayCriterios.length === 0" data-toggle="modal" data-target="#llamarCriterio" id="decisionPrincipal">
-                  {{criter.nombreCriterio}} - {{criter.peso}}
-                </span>
+                  <div class="col-sm-12 col-md-6 col-12">
+                    <span (click)="mostrarCriterio(criter)" *ngIf="arrayCriterios.length !== 0" style="color: blue;">
+                      Nivel 2 - subcriterio {{criter.id}}: 
+                    </span>  
+                  </div>
 
-                <span (click)="eliminarCriterio()" *ngIf="criter.id == arrayCriterios.length" id="botones" class="float-right ml-3"> - </span>
-                <span (click)="agregarCriterio()" *ngIf="criter.id == arrayCriterios.length" id="botones" class="float-right"> + </span>
+                  <div>
+                    <span *ngIf="arrayCriterios.length === 0" data-toggle="modal" data-target="#llamarCriterio" id="decisionPrincipal">
+                      {{criter.nombreCriterio}} - {{criter.peso}}
+                    </span>
+                  </div>
+                  
+                  <span  class="col-sm-12 col-md-6 col-12 " (click)="mostrarCriterio(criter)" *ngIf="arrayCriterios.length !== 0" id="decisionPrincipal" > 
+                    {{criter.nombreCriterio}} - {{criter.peso}}
+                  </span>
+                </div>
 
-                <span (click)="mostrarCriterio(criter)" *ngIf="arrayCriterios.length !== 0" id="decisionPrincipal" > 
-                  {{criter.nombreCriterio}} - {{criter.peso}}
-                </span>
-
-                <app-criterio-tres *ngIf="criter == numeroCriterio && mostrar2 == true"></app-criterio-tres>
+                <div class="float-left mostrarCriterioTres">
+                  <app-criterio-tres *ngIf="criter == numeroCriterio && mostrar2 == true"></app-criterio-tres>
+                </div>
+                
+                <div class="row">
+                  <div class="mt-4 mb-2 col-12">
+                    <span (click)="eliminarCriterio()" *ngIf="criter.id == arrayCriterios.length" id="botones" class="float-right"> - </span>
+                    <span (click)="agregarCriterio()" *ngIf="criter.id == arrayCriterios.length" id="botones" class="float-right mr-3"> + </span>
+                  </div>
+                </div>
 
             </li>
           </ul>

@@ -35,6 +35,12 @@
     }
 }
 
+@media (max-width: 700px){
+    /* .mostrarCriterioUno{
+        width: 105%;
+    } */
+}
+
 @media (max-width: 575px){
 
     .contenedorDecisiones{
